@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainGameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayGameActivity">
+
+    <ImageView
+        android:id="@+id/backgroundView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foregroundGravity="center_vertical|center_horizontal"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/new_bg" />
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="8dp"
+        android:text="20"
+        android:textAlignment="center"
+        android:textColor="@color/yellowishText"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundView" />
+
+    <ImageView
+        android:id="@+id/currencyImageView"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="33dp"
+        android:paddingRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundView"
+        app:srcCompat="@drawable/coin_drawable" />
+
+    <!--    android:layout_centerInParent="true"-->
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
+
+
+        <Button
+            android:id="@+id/resetQuestButton"
+            android:layout_width="62dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/darkGreen"
+            android:onClick="buttonResetQuest"
+            android:paddingLeft="3dp"
+            android:text="Reset Quest"
+            android:textColor="@color/yellowishText"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/questButton"
+            android:layout_width="125dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginBottom="221dp"
+            android:background="@drawable/parchment"
+            android:onClick="showQuestDescription"
+            android:text="Check Quest"
+            android:textColor="@color/darkGreen"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomConstraintLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/plantPlacesConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/gifImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:foregroundGravity="center_vertical"
+                android:src="@drawable/tree2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/gifImageView2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:foregroundGravity="center_vertical"
+                android:src="@drawable/tree2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/plantInfoTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:textAlignment="center"
+                android:textColor="@color/yellow"
+                android:textSize="32sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/plantQuestTextView"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="96dp"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@color/yellow"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/plot1"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:background="#453313"
+                    android:enabled="true"
+                    android:onClick="buttonContainerOnClick"
+                    android:tag="1" />
+
+                <Button
+                    android:id="@+id/plot2"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:background="#453313"
+                    android:enabled="true"
+                    android:onClick="buttonContainerOnClick"
+                    android:tag="2" />
+
+                <Button
+                    android:id="@+id/plot3"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:background="#453313"
+                    android:enabled="true"
+                    android:onClick="buttonContainerOnClick"
+                    android:tag="3" />
+
+                <Button
+                    android:id="@+id/plot4"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:background="#453313"
+                    android:enabled="true"
+                    android:onClick="buttonContainerOnClick"
+                    android:tag="4" />
+
+                <Button
+                    android:id="@+id/plot5"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:background="#453313"
+                    android:enabled="true"
+                    android:onClick="buttonContainerOnClick"
+                    android:tag="5" />
+
+                <Button
+                    android:id="@+id/plot6"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:background="#453313"
+                    android:enabled="true"
+                    android:onClick="buttonContainerOnClick"
+                    android:tag="6" />
+
+                <Button
+                    android:id="@+id/plot7"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:background="#453313"
+                    android:enabled="true"
+                    android:onClick="buttonContainerOnClick"
+                    android:tag="7" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomConstraintLayout"
+            android:layout_width="733dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/questButton">
+
+
+            <LinearLayout
+                android:id="@+id/bottomLineraLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <Button
+                    android:id="@+id/seed1Button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="0px"
+                    android:background="@drawable/seed1"
+                    android:enabled="true"
+                    android:gravity="bottom|center"
+                    android:onClick="onBottomButtonWithPlantsClick"
+                    android:paddingLeft="3dp"
+                    android:paddingBottom="4dp"
+                    android:tag="seed1"
+                    android:text="Cost: 2"
+                    android:textColor="#CDDC39"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/seed2Button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/seed2"
+                    android:enabled="true"
+                    android:gravity="bottom|center"
+                    android:onClick="onBottomButtonWithPlantsClick"
+                    android:paddingBottom="4dp"
+                    android:tag="seed2"
+                    android:text="Cost: 3"
+                    android:textColor="#CDDC39"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/seed3Button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/seed3"
+                    android:enabled="true"
+                    android:gravity="bottom|center"
+                    android:onClick="onBottomButtonWithPlantsClick"
+                    android:paddingBottom="4dp"
+                    android:tag="seed3"
+                    android:text="Cost: 4"
+                    android:textColor="#CDDC39"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/seed4Button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/seed4"
+                    android:enabled="true"
+                    android:gravity="bottom|center"
+                    android:onClick="onBottomButtonWithPlantsClick"
+                    android:paddingBottom="4dp"
+                    android:tag="seed4"
+                    android:text="Cost: 5"
+                    android:textColor="#CDDC39"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/seed5Button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/seed5"
+                    android:enabled="true"
+                    android:gravity="bottom|center"
+                    android:onClick="onBottomButtonWithPlantsClick"
+                    android:paddingBottom="4dp"
+                    android:tag="seed5"
+                    android:text="Cost: 6"
+                    android:textColor="#CDDC39"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/seed6Button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/seed6"
+                    android:enabled="true"
+                    android:gravity="bottom|center"
+                    android:onClick="onBottomButtonWithPlantsClick"
+                    android:paddingBottom="4dp"
+                    android:tag="seed6"
+                    android:text="Cost: 7"
+                    android:textColor="#CDDC39"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/seeCostButton"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="95dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/helpicon"
+                    android:enabled="true"
+                    android:gravity="bottom|center"
+                    android:onClick="onClickButtonDropDownBoxList"
+                    android:text="Help"
+                    android:textColor="#CDDC39"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/droid_sans</item>
+        <item>@font/esteban</item>
+        <item>@font/indie_flower</item>
+        <item>@font/irish_grover</item>
+        <item>@font/montserrat_subrayada</item>
+    </array>
+</resources>
